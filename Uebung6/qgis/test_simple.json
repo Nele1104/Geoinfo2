@@ -1,0 +1,39 @@
+{
+  "version": 8,
+  "name": "Gebäude · Übung 6",
+  "sources": {
+    "buildings": {
+      "type": "vector",
+      "tiles": [
+        "https://<user>.github.io/<repo>/Uebung6/tiles_xyz/buildings/{z}/{x}/{y}.pbf"
+      ],
+      "minzoom": 13,
+      "maxzoom": 16
+    }
+  },
+  "layers": [
+    {
+      "id": "buildings",
+      "type": "fill",
+      "source": "buildings",
+      "source-layer": "buildings",
+      "minzoom": 13,
+      "maxzoom": 17,
+      "paint": {
+        "fill-color": [
+          "step",
+          ["to-number", ["get", "building:levels"], 0],
+          "#bdbdbd",
+          1,
+          "#9ecae1",
+          3,
+          "#4292c6",
+          5,
+          "#08519c"
+        ],
+        "fill-opacity": 0.85,
+        "fill-outline-color": "#ffffff"
+      }
+    }
+  ]
+}
